@@ -58,7 +58,8 @@ sudo systemctl status jenkins
 > [!NOTE]  
 > Remember this user id and password. This will overwrite the `Initial Password` generated, and will be required to login everytime you restart Jenkins.
 
-![1](https://github.com/user-attachments/assets/41acee70-682f-4f54-912a-e9756a677091)
+![image](https://github.com/user-attachments/assets/0146a230-0951-4671-b88c-6ded7564a01f)
+
 
  - Leave the default Jenkins URL then click `Save and Finish`
 
