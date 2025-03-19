@@ -40,9 +40,10 @@ sudo reboot
  - Go to Jenkins > `Manage Jenkins` > `Credentials` > `System` > `Global Credentials (Unrestricted)` > `Add Credentials`
  -  Fill your Docker hub `username` , `password`, and in the `id` field enter `docker-seccred`
    
-![Uploading Screenshot_2025-03-19_06_28_02.png…]()
+![Screenshot_2025-03-19_06_28_02](https://github.com/user-attachments/assets/7ddaba21-49a1-4324-9987-8a1ca84c3d31)
 
 ## Creating and building a pipeline
+
 
  - Go to Jenkins `Dashboard` > `Create a Job`
 
