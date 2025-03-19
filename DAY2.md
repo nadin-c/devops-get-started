@@ -28,7 +28,7 @@ docker
  - Go to Jenkins > `Manage Jenkins` > `Credentials` > `System` > `Global Credentials (Unrestricted)` > `Add Credentials`
  -  Fill your Docker hub `username` , `password`, and in the `id` field enter `docker-seccred`
 
-![image](https://github.com/user-attachments/assets/c9e87ffe-6776-48ae-ab68-440eb5310626)
+
 
 ## Creating and building a pipeline
 
@@ -51,7 +51,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "sanjai4334/docker"          // Replace with your Docker Hub username and image name
+        IMAGE_NAME = "nadinc/docker_pipe"          // Replace with your Docker Hub username and image name
         TAG = "latest"
         CONTAINER_NAME = "my-container"
         PORT = "3001"
@@ -62,7 +62,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo "Cloning GitHub repository..."
-                git 'https://github.com/sanjai4334/docker.git'  // Replace with your repo URL
+                git branch:'main', url: 'https://github.com/nadin-c/Devops.git'  // Replace with your repo URL
             }
         }
 
