@@ -1,3 +1,4 @@
+# Creating a docker image using 
 ## Installing Docker
   - Enter the following commands to inatall and verify installation of Docker
 ```bash
@@ -24,15 +25,24 @@ docker
 
  - In this page Check the `Restart Jenkins` after installation this will restart Jenkins
 
+![image](https://github.com/user-attachments/assets/023e655e-e8e7-4b3b-9b74-317f9f4484f2)
+
+## Add Jenkins to Docker group
+ - Go to terminal and run these commands to add Jenkins to docker group
+```bash
+sudo usermod - aG docker jenkins
+sudo systemctl restart jenkins
+sudo reboot
+```
+- This will do its thing and reboot the system 
+
 ## Setting up docker credentials
  - Go to Jenkins > `Manage Jenkins` > `Credentials` > `System` > `Global Credentials (Unrestricted)` > `Add Credentials`
  -  Fill your Docker hub `username` , `password`, and in the `id` field enter `docker-seccred`
-
-
+   
+![Uploading Screenshot_2025-03-19_06_28_02.png…]()
 
 ## Creating and building a pipeline
-
-![image](https://github.com/user-attachments/assets/023e655e-e8e7-4b3b-9b74-317f9f4484f2)
 
  - Go to Jenkins `Dashboard` > `Create a Job`
 
@@ -51,7 +61,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "nadinc/docker_pipe"          // Replace with your Docker Hub username and image name
+        IMAGE_NAME = "sanjai4334/docker"          // Replace with your Docker Hub username and image name
         TAG = "latest"
         CONTAINER_NAME = "my-container"
         PORT = "3001"
@@ -62,7 +72,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo "Cloning GitHub repository..."
-                git branch:'main', url: 'https://github.com/nadin-c/Devops.git'  // Replace with your repo URL
+                git 'https://github.com/sanjai4334/docker.git'  // Replace with your repo URL
             }
         }
 
@@ -111,3 +121,10 @@ pipeline {
 }
 ```
  - click `save`
+ - click `build`
+
+![image](https://github.com/user-attachments/assets/7fad77f3-d083-414c-86fb-5ec0145a4b6d)
+
+ - Go to `localhosy:3001`
+
+![image](https://github.com/user-attachments/assets/ca5e469e-96d8-4cc9-986e-b490f0604dd6)
